@@ -14,7 +14,6 @@ class ClassificationMethod:
    - NaiveBayesClassifier
    - PerceptronClassifier
    - MiraClassifier
-   - MostFrequentClassifier
  
   As such, you need not add any code to this file.  You can write
   all of your implementation code in the files for the individual
