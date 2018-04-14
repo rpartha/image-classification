@@ -101,6 +101,8 @@ def loadDataFile(filename, n,width,height):
   DATUM_WIDTH=width
   DATUM_HEIGHT=height
   fin = readlines(filename)
+  fin = fin.decode("utf-8")
+  fin = fin.split("\n")
   fin.reverse()
   items = []
   for i in range(n):
@@ -121,8 +123,8 @@ def readlines(filename):
   if(os.path.exists(filename)): 
     return [l[:-1] for l in open(filename).readlines()]
   else: 
-    z = zipfile.ZipFile('data.zip')
-    return z.read(filename).split('\n')
+    z = zipfile.ZipFile("data.zip", "r")
+    return z.read(filename)
     
 def loadLabelsFile(filename, n):
   """
