@@ -101,8 +101,6 @@ def loadDataFile(filename, n,width,height):
   DATUM_WIDTH=width
   DATUM_HEIGHT=height
   fin = readlines(filename)
-  fin = fin.decode("utf-8")
-  fin = fin.split("\n")
   fin.reverse()
   items = []
   for i in range(n):
@@ -111,7 +109,7 @@ def loadDataFile(filename, n,width,height):
       data.append(list(fin.pop()))
     if len(data[0]) < DATUM_WIDTH-1:
       # we encountered end of file...
-      print ("Truncating at %d examples (maximum)" % i)
+      print "Truncating at %d examples (maximum)" % i
       break
     items.append(Datum(data,DATUM_WIDTH,DATUM_HEIGHT))
   return items
@@ -123,8 +121,8 @@ def readlines(filename):
   if(os.path.exists(filename)): 
     return [l[:-1] for l in open(filename).readlines()]
   else: 
-    z = zipfile.ZipFile("data.zip", "r")
-    return z.read(filename)
+    z = zipfile.ZipFile('data.zip')
+    return z.read(filename).split('\n')
     
 def loadLabelsFile(filename, n):
   """
@@ -180,12 +178,12 @@ def _test():
   items = loadDataFile("digitdata/trainingimages", n,28,28)
   labels = loadLabelsFile("digitdata/traininglabels", n)
   for i in range(1):
-    print (items[i])
-    print (items[i])
-    print ((items[i].height))
-    print ((items[i].width))
-    print (dir(items[i]))
-    print (items[i].getPixels())
+    print items[i]
+    print items[i]
+    print (items[i].height)
+    print (items[i].width)
+    print dir(items[i])
+    print items[i].getPixels()
 
 if __name__ == "__main__":
   _test()  
