@@ -59,9 +59,11 @@ class NaiveBayesClassifier(classificationMethod.ClassificationMethod):
     To get the list of all possible features or labels, use self.features and 
     self.legalLabels.
     """
-
-    "*** YOUR CODE HERE ***"
-    util.raiseNotDefined()
+    theList = []
+    for a in trainingData:
+		print a
+		
+    
         
   def classify(self, testData):
     """
