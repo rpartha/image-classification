@@ -138,9 +138,6 @@ public class Driver {
 	    	char val = (char) asciiVal;
 	    	arrLabels.add(val);
 	    }
-	    for(int n : arrLabels){
-	    	//System.out.println(n);
-	    }
 	    System.out.println("Training: ");
 	    if(algo == 'n' && c == 'f'){
 	    	int result = NaiveBayes.naiveBayesFace(arrListData,arrLabels);
