@@ -55,11 +55,11 @@ public class NaiveBayes {
 				numFace++;
 			}
 		}
-		double ytrue = (double) numFace/451;
-		double yfalse = (double)(451 - numFace)/451;
+		double ytrue = (double) numFace/arrFace.size();
+		double yfalse = (double)(arrFace.size() - numFace)/arrFace.size();
 		double[][] probYTrue = new double[69][70];
 		double[][] probYFalse = new double[69][70];
-		int[] finalVals = new int[451];
+		int[] finalVals = new int[arrFace.size()];
 		double finalYTrue = 1;
 		double finalYFalse = 1;
 		double finalResult = 0;
@@ -91,7 +91,7 @@ public class NaiveBayes {
 					}
 				}
 				probYTrue[i][w] = (double) numCurrentLevelFace/numFace;
-				probYFalse[i][w] = (double) numCurrentLevelNotFace/numFace;
+				probYFalse[i][w] = (double) numCurrentLevelNotFace/(arrLabels.size() -numFace);
 				if(probYTrue[i][w] == 0){
 					probYTrue[i][w] = 0.01;
 				}
@@ -125,12 +125,12 @@ public class NaiveBayes {
 			}
 		}
 		
-		for(int i = 0; i < 451; i++){
+		for(int i = 0; i < arrFace.size(); i++){
 			if(finalVals[i] == arrLabels.get(i)){
 				numCorrect += 1;
 			}
 		}
-		double finalRes = (double) numCorrect/451*100;
+		double finalRes = (double) numCorrect/arrFace.size()*100;
 		System.out.println("Accuracy: " + finalRes + " %");
 		
 		return 0;

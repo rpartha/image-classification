@@ -54,6 +54,8 @@ public class Driver {
 	    File trainFile = null;
 	    File trainLabels = null;
 	    File[] fList2 = folder2.listFiles();
+	    File validationFile = null;
+	    File validationLabels = null;
 	    for(File file : fList2){
 	    	if(c == 'd' && file.getName().equals("trainingimages")){
 	    		trainFile = new File(file.getAbsolutePath());
@@ -69,6 +71,24 @@ public class Driver {
 	    	}
 	    	else if(c == 'f' && file.getName().equals("facedatatrainlabels")){
 	    		trainLabels = new File(file.getAbsolutePath());
+	    	}
+	    	else {
+	    		
+	    	}
+	    	if(c == 'd' && file.getName().equals("validationimages")){
+	    		validationFile = new File(file.getAbsolutePath());
+	    	}
+	    	else if(c == 'f' && file.getName().equals("facedatavalidation")){
+	    		validationFile = new File(file.getAbsolutePath());
+	    	}
+	    	else {
+	    		
+	    	}
+	    	if(c == 'd' && file.getName().equals("validationlabels")){
+	    		validationLabels = new File(file.getAbsolutePath());
+	    	}
+	    	else if(c == 'f' && file.getName().equals("facedatavalidationlabels")){
+	    		validationLabels = new File(file.getAbsolutePath());
 	    	}
 	    	else {
 	    		
@@ -144,6 +164,83 @@ public class Driver {
 	    }
 	    else if(algo == 'n' && c == 'd'){
 	    	int result = NaiveBayes.naiveBayesDigit(arrListData,arrLabels);
+	    }
+	    System.out.println("Training: ");
+	    if(algo == 'p' && c == 'f'){
+	    	int result = Perceptron.perceptronFace(arrListData,arrLabels);
+	    }
+	    else if(algo == 'p' && c == 'd'){
+	    	int result = Perceptron.perceptronDigit(arrListData,arrLabels);
+	    }
+	    ArrayList<char[][]> arrListDataValidate = new ArrayList<char[][]>();
+	    FileReader frValidate = new FileReader(validationFile);
+	    BufferedReader brValidate = new BufferedReader(frValidate);
+	    //char[][] arrDigit = new char[30][30];
+	    //char[][] arrFace = new char[70][70];
+	    String dataStrValidate = null;
+	    if(c == 'd'){
+		    while((dataStrValidate = brValidate.readLine()) != null){
+		    	char[][] arrDigit = new char[30][30];
+			    for(int i = 0; i < 27; i++){
+			    	for(int j = 0; j < 30; j++){
+			    		try{
+			    			arrDigit[i][j] = dataStrValidate.charAt(j);
+			    		} catch (Exception e){
+			    			
+			    		}
+			    		//System.out.print(arrDigit[i][j]);
+			    	}
+			    	//System.out.println();
+			    	dataStrValidate = brValidate.readLine();
+			    }
+			    arrListDataValidate.add(arrDigit);
+			    /*if(br.readLine() == null){
+			    	break;
+			    }
+			    else{
+			    	br.readLine();
+			    }*/
+		    }
+	    }
+	    if(c == 'f'){
+	    	while((dataStrValidate = brValidate.readLine()) != null){
+	    		char[][] arrFace = new char[70][70];
+			    for(int i = 0; i < 69; i++){
+			    	for(int j = 0; j < 70; j++){
+			    		try{
+			    			arrFace[i][j] = dataStrValidate.charAt(j);
+			    		} catch (Exception e){
+			    			
+			    		}
+			    		//System.out.print(arrFace[i][j]);
+			    	}
+			    	//System.out.println();
+			    	dataStrValidate = brValidate.readLine();
+			    }
+			    arrListDataValidate.add(arrFace);
+			    /*if(br.readLine() == null){
+			    	break;
+			    }
+			    else {
+			    	br.readLine();
+			    }*/
+		    }
+	    }
+	    FileReader filereaderValidate = new FileReader(validationLabels);
+	    BufferedReader bufferedreaderValidate = new BufferedReader(filereaderValidate);
+	    ArrayList<Character> arrLabelsValidate = new ArrayList<Character>();
+	    String numberValidate = null;
+	    while((numberValidate =  bufferedreaderValidate.readLine()) != null){
+	    	int asciiVal = Integer.parseInt(numberValidate);
+	    	char val = (char) asciiVal;
+	    	arrLabelsValidate.add(val);
+	    }
+	    System.out.println("Validating: ");
+	    if(algo == 'n' && c == 'f'){
+	    	int result = NaiveBayes.naiveBayesFace(arrListDataValidate,arrLabelsValidate);
+	    }
+	    else if(algo == 'n' && c == 'd'){
+	    	int result = NaiveBayes.naiveBayesDigit(arrListDataValidate,arrLabelsValidate);
 	    }
 	}
 }
