@@ -56,6 +56,8 @@ public class Driver {
 	    File[] fList2 = folder2.listFiles();
 	    File validationFile = null;
 	    File validationLabels = null;
+	    File testFile = null;
+	    File testLabels = null;
 	    for(File file : fList2){
 	    	if(c == 'd' && file.getName().equals("trainingimages")){
 	    		trainFile = new File(file.getAbsolutePath());
@@ -93,7 +95,24 @@ public class Driver {
 	    	else {
 	    		
 	    	}
-	    	
+	    	if(c == 'd' && file.getName().equals("testimages")){
+	    		testFile = new File(file.getAbsolutePath());
+	    	}
+	    	else if(c == 'f' && file.getName().equals("facedatatest")){
+	    		testFile = new File(file.getAbsolutePath());
+	    	}
+	    	else {
+	    		
+	    	}
+	    	if(c == 'd' && file.getName().equals("testlabels")){
+	    		testLabels = new File(file.getAbsolutePath());
+	    	}
+	    	else if(c == 'f' && file.getName().equals("facedatatestlabels")){
+	    		testLabels = new File(file.getAbsolutePath());
+	    	}
+	    	else {
+	    		
+	    	}
 	    }
 	    ArrayList<char[][]> arrListDatatenpc = new ArrayList<char[][]>();
 	    ArrayList<char[][]> arrListDatatwenpc = new ArrayList<char[][]>();
@@ -349,6 +368,58 @@ public class Driver {
 	    }
 	    else if(algo == 'n' && c == 'd'){
 	    	int result = NaiveBayes.naiveBayesDigit(arrListDataValidate,arrLabelsValidate);
+	    }
+	    ArrayList<char[][]> arrListDataTest = new ArrayList<char[][]>();
+	    FileReader frTest = new FileReader(testFile);
+	    BufferedReader brTest = new BufferedReader(frTest);
+	    String dataStrTest = null;
+	    if(c == 'd'){
+		    while((dataStrTest = brTest.readLine()) != null){
+		    	char[][] arrDigit = new char[30][30];
+			    for(int i = 0; i < 27; i++){
+			    	for(int j = 0; j < 30; j++){
+			    		try{
+			    			arrDigit[i][j] = dataStrTest.charAt(j);
+			    		} catch (Exception e){
+			    			
+			    		}
+			    	}
+			    	dataStrTest = brTest.readLine();
+			    }
+			    arrListDataTest.add(arrDigit);
+		    }
+	    }
+	    if(c == 'f'){
+	    	while((dataStrTest = brTest.readLine()) != null){
+	    		char[][] arrFace = new char[70][70];
+			    for(int i = 0; i < 69; i++){
+			    	for(int j = 0; j < 70; j++){
+			    		try{
+			    			arrFace[i][j] = dataStrTest.charAt(j);
+			    		} catch (Exception e){
+			    			
+			    		}
+			    	}
+			    	dataStrTest = brTest.readLine();
+			    }
+			    arrListDataTest.add(arrFace);
+		    }
+	    }
+	    FileReader filereaderTest = new FileReader(testLabels);
+	    BufferedReader bufferedreaderTest = new BufferedReader(filereaderTest);
+	    ArrayList<Character> arrLabelsTest = new ArrayList<Character>();
+	    String numberTest = null;
+	    while((numberTest =  bufferedreaderTest.readLine()) != null){
+	    	int asciiVal = Integer.parseInt(numberTest);
+	    	char val = (char) asciiVal;
+	    	arrLabelsTest.add(val);
+	    }
+	    System.out.println("Testing: ");
+	    if(algo == 'n' && c == 'f'){
+	    	int result = NaiveBayes.naiveBayesFace(arrListDataTest,arrLabelsTest);
+	    }
+	    else if(algo == 'n' && c == 'd'){
+	    	int result = NaiveBayes.naiveBayesDigit(arrListDataTest,arrLabelsTest);
 	    }
 	}
 }
