@@ -1,26 +1,18 @@
 import java.util.ArrayList;
 
 public class NaiveBayes {
-	public static int naiveBayesDigit(ArrayList<char[][]> arrDigit, ArrayList<Character> arrLabels){
-		for(char[][] a : arrDigit){
-			for(int b = 0; b < 30; b++){
-				for(int c = 0; c < 30; c++){
-					System.out.print(a[b][c]);
-				}
-				System.out.println();
-			}
-		}
-		System.out.println("Number of Images: " + arrDigit.size());
-		System.out.println("Number of Labels: " + arrLabels.size());
-		System.out.println("Something's Wrong!");
-		if(arrDigit.size() != arrLabels.size()){
-			System.out.println("Number of Images: " + arrDigit.size());
-			System.out.println("Number of Labels: " + arrLabels.size());
-			System.out.println("Something's Wrong!");
-		}
-		return 0;
+	public static int[] naiveBayesDigit(ArrayList<char[][]> arrDigit, ArrayList<Character> arrLabels, boolean testingFunction){
+		//TO-DO
+		
+		return null;
 	}
-	public static int[] naiveBayesFace(ArrayList<char[][]> arrFace, ArrayList<Character> arrLabels){
+	
+	public static void naiveBayesDigitTestFunction(ArrayList<char[][]> arrDigit, ArrayList<Character> arrLabels, int index){
+		//TO-DO
+	}
+	
+	
+	public static int[] naiveBayesFace(ArrayList<char[][]> arrFace, ArrayList<Character> arrLabels, boolean testingFunction){
 		ArrayList<Structure> structArrList = new ArrayList<>();
 		ArrayList<char[][]> justFaces = new ArrayList<>();
 		ArrayList<char[][]> nonFaces = new ArrayList<>();
@@ -118,13 +110,15 @@ public class NaiveBayes {
 			}
 		}
 		double finalRes = (double) numCorrect/arrFace.size()*100;
-		System.out.println("Accuracy: " + finalRes + " %");
+		if(!testingFunction){
+			System.out.println("Accuracy: " + finalRes + " %");
+		}
 		
 		return finalVals;
 	}
 	
 	public static void naiveBayesFaceTestFunction(ArrayList<char[][]> arrFace, ArrayList<Character> arrLabels, int index){
-		int[] finalVals = naiveBayesFace(arrFace,arrLabels);
+		int[] finalVals = naiveBayesFace(arrFace,arrLabels, true);
 		
 		int predictedAnswer = finalVals[index-1];
 		System.out.println("Predicted Answer: " + predictedAnswer);

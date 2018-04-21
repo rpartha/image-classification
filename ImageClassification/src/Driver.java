@@ -243,73 +243,73 @@ public class Driver {
 	    }
 	    System.out.println("Training (10%): ");
 	    if(algo == 'n' && c == 'f'){
-	    	NaiveBayes.naiveBayesFace(arrListDatatenpc,arrLabelstenpc);
+	    	NaiveBayes.naiveBayesFace(arrListDatatenpc,arrLabelstenpc, false);
 	    }
 	    else if(algo == 'n' && c == 'd'){
-	    	NaiveBayes.naiveBayesDigit(arrListDatatenpc,arrLabelstenpc);
+	    	NaiveBayes.naiveBayesDigit(arrListDatatenpc,arrLabelstenpc,false);
 	    }
 	    System.out.println("Training (20%): ");
 	    if(algo == 'n' && c == 'f'){
-	    	NaiveBayes.naiveBayesFace(arrListDatatwenpc,arrLabelstwenpc);
+	    	NaiveBayes.naiveBayesFace(arrListDatatwenpc,arrLabelstwenpc,false);
 	    }
 	    else if(algo == 'n' && c == 'd'){
-	    	NaiveBayes.naiveBayesDigit(arrListDatatwenpc,arrLabelstwenpc);
+	    	NaiveBayes.naiveBayesDigit(arrListDatatwenpc,arrLabelstwenpc,false);
 	    }
 	    System.out.println("Training (30%): ");
 	    if(algo == 'n' && c == 'f'){
-	    	NaiveBayes.naiveBayesFace(arrListDatathirdpc,arrLabelsthirdpc);
+	    	NaiveBayes.naiveBayesFace(arrListDatathirdpc,arrLabelsthirdpc,false);
 	    }
 	    else if(algo == 'n' && c == 'd'){
-	    	NaiveBayes.naiveBayesDigit(arrListDatathirdpc,arrLabelsthirdpc);
+	    	NaiveBayes.naiveBayesDigit(arrListDatathirdpc,arrLabelsthirdpc,false);
 	    }
 	    System.out.println("Training (40%): ");
 	    if(algo == 'n' && c == 'f'){
-	    	NaiveBayes.naiveBayesFace(arrListDatafourpc,arrLabelsfourpc);
+	    	NaiveBayes.naiveBayesFace(arrListDatafourpc,arrLabelsfourpc,false);
 	    }
 	    else if(algo == 'n' && c == 'd'){
-	    	NaiveBayes.naiveBayesDigit(arrListDatafourpc,arrLabelsfourpc);
+	    	NaiveBayes.naiveBayesDigit(arrListDatafourpc,arrLabelsfourpc,false);
 	    }
 	    System.out.println("Training (50%): ");
 	    if(algo == 'n' && c == 'f'){
-	    	NaiveBayes.naiveBayesFace(arrListDatafifpc,arrLabelsfifpc);
+	    	NaiveBayes.naiveBayesFace(arrListDatafifpc,arrLabelsfifpc,false);
 	    }
 	    else if(algo == 'n' && c == 'd'){
-	    	NaiveBayes.naiveBayesDigit(arrListDatafifpc,arrLabelsfifpc);
+	    	NaiveBayes.naiveBayesDigit(arrListDatafifpc,arrLabelsfifpc,false);
 	    }
 	    System.out.println("Training (60%): ");
 	    if(algo == 'n' && c == 'f'){
-	    	NaiveBayes.naiveBayesFace(arrListDatasixpc,arrLabelssixpc);
+	    	NaiveBayes.naiveBayesFace(arrListDatasixpc,arrLabelssixpc,false);
 	    }
 	    else if(algo == 'n' && c == 'd'){
-	    	NaiveBayes.naiveBayesDigit(arrListDatasixpc,arrLabelssixpc);
+	    	NaiveBayes.naiveBayesDigit(arrListDatasixpc,arrLabelssixpc,false);
 	    }
 	    System.out.println("Training (70%): ");
 	    if(algo == 'n' && c == 'f'){
-	    	NaiveBayes.naiveBayesFace(arrListDatasevpc,arrLabelssevpc);
+	    	NaiveBayes.naiveBayesFace(arrListDatasevpc,arrLabelssevpc,false);
 	    }
 	    else if(algo == 'n' && c == 'd'){
-	    	NaiveBayes.naiveBayesDigit(arrListDatasevpc,arrLabelssevpc);
+	    	NaiveBayes.naiveBayesDigit(arrListDatasevpc,arrLabelssevpc,false);
 	    }
 	    System.out.println("Training (80%): ");
 	    if(algo == 'n' && c == 'f'){
-	    	NaiveBayes.naiveBayesFace(arrListDataeigpc,arrLabelseigpc);
+	    	NaiveBayes.naiveBayesFace(arrListDataeigpc,arrLabelseigpc,false);
 	    }
 	    else if(algo == 'n' && c == 'd'){
-	    	NaiveBayes.naiveBayesDigit(arrListDataeigpc,arrLabelseigpc);
+	    	NaiveBayes.naiveBayesDigit(arrListDataeigpc,arrLabelseigpc,false);
 	    }
 	    System.out.println("Training (90%): ");
 	    if(algo == 'n' && c == 'f'){
-	    	NaiveBayes.naiveBayesFace(arrListDataninpc,arrLabelsninpc);
+	    	NaiveBayes.naiveBayesFace(arrListDataninpc,arrLabelsninpc,false);
 	    }
 	    else if(algo == 'n' && c == 'd'){
-	    	NaiveBayes.naiveBayesDigit(arrListDataninpc,arrLabelsninpc);
+	    	NaiveBayes.naiveBayesDigit(arrListDataninpc,arrLabelsninpc,false);
 	    }
 	    System.out.println("Training (100%): ");
 	    if(algo == 'n' && c == 'f'){
-	    	NaiveBayes.naiveBayesFace(arrListData,arrLabels);
+	    	NaiveBayes.naiveBayesFace(arrListData,arrLabels,false);
 	    }
 	    else if(algo == 'n' && c == 'd'){
-	    	NaiveBayes.naiveBayesDigit(arrListData,arrLabels);
+	    	NaiveBayes.naiveBayesDigit(arrListData,arrLabels,false);
 	    }
 	    if(algo == 'p' && c == 'f'){
 	    	int result = Perceptron.perceptronFace(arrListData,arrLabels);
@@ -364,10 +364,10 @@ public class Driver {
 	    }
 	    System.out.println("Validating: ");
 	    if(algo == 'n' && c == 'f'){
-	    	NaiveBayes.naiveBayesFace(arrListDataValidate,arrLabelsValidate);
+	    	NaiveBayes.naiveBayesFace(arrListDataValidate,arrLabelsValidate,false);
 	    }
 	    else if(algo == 'n' && c == 'd'){
-	    	NaiveBayes.naiveBayesDigit(arrListDataValidate,arrLabelsValidate);
+	    	NaiveBayes.naiveBayesDigit(arrListDataValidate,arrLabelsValidate,false);
 	    }
 	    ArrayList<char[][]> arrListDataTest = new ArrayList<char[][]>();
 	    FileReader frTest = new FileReader(testFile);
@@ -416,10 +416,10 @@ public class Driver {
 	    }
 	    System.out.println("Testing: ");
 	    if(algo == 'n' && c == 'f'){
-	    	NaiveBayes.naiveBayesFace(arrListDataTest,arrLabelsTest);
+	    	NaiveBayes.naiveBayesFace(arrListDataTest,arrLabelsTest,false);
 	    }
 	    else if(algo == 'n' && c == 'd'){
-	    	NaiveBayes.naiveBayesDigit(arrListDataTest,arrLabelsTest);
+	    	NaiveBayes.naiveBayesDigit(arrListDataTest,arrLabelsTest,false);
 	    }
 	    while(true){
 	    	int index = 0;
