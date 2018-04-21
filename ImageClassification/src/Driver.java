@@ -95,13 +95,23 @@ public class Driver {
 	    	}
 	    	
 	    }
+	    ArrayList<char[][]> arrListDatatenpc = new ArrayList<char[][]>();
+	    ArrayList<char[][]> arrListDatatwenpc = new ArrayList<char[][]>();
+	    ArrayList<char[][]> arrListDatathirdpc = new ArrayList<char[][]>();
+	    ArrayList<char[][]> arrListDatafourpc = new ArrayList<char[][]>();
+	    ArrayList<char[][]> arrListDatafifpc = new ArrayList<char[][]>();
+	    ArrayList<char[][]> arrListDatasixpc = new ArrayList<char[][]>();
+	    ArrayList<char[][]> arrListDatasevpc = new ArrayList<char[][]>();
+	    ArrayList<char[][]> arrListDataeigpc = new ArrayList<char[][]>();
+	    ArrayList<char[][]> arrListDataninpc = new ArrayList<char[][]>();
 	    ArrayList<char[][]> arrListData = new ArrayList<char[][]>();
 	    FileReader fr = new FileReader(trainFile);
 	    BufferedReader br = new BufferedReader(fr);
 	    String dataStr = null;
+	    int count = 0;
 	    if(c == 'd'){
 		    while((dataStr = br.readLine()) != null){
-		    	char[][] arrDigit = new char[30][30];
+		    	char[][] arrDigit = new char[27][30];
 			    for(int i = 0; i < 27; i++){
 			    	for(int j = 0; j < 30; j++){
 			    		try{
@@ -117,7 +127,7 @@ public class Driver {
 	    }
 	    if(c == 'f'){
 	    	while((dataStr = br.readLine()) != null){
-	    		char[][] arrFace = new char[70][70];
+	    		char[][] arrFace = new char[69][70];
 			    for(int i = 0; i < 69; i++){
 			    	for(int j = 0; j < 70; j++){
 			    		try{
@@ -128,19 +138,154 @@ public class Driver {
 			    	}
 			    	dataStr = br.readLine();
 			    }
+			    if(count < 46){
+			    	arrListDatatenpc.add(arrFace);
+			    }
+			    else if(count < 91 && count >= 46){
+			    	arrListDatatwenpc.add(arrFace);
+			    }
+			    else if(count < 136 && count >= 91){
+			    	arrListDatathirdpc.add(arrFace);
+			    }
+			    else if(count < 181 && count >= 136){
+			    	arrListDatafourpc.add(arrFace);
+			    }
+			    else if(count < 226 && count >= 181){
+			    	arrListDatafifpc.add(arrFace);
+			    }
+			    else if(count < 271 && count >= 226){
+			    	arrListDatasixpc.add(arrFace);
+			    }
+			    else if(count < 316 && count >= 271){
+			    	arrListDatasevpc.add(arrFace);
+			    }
+			    else if(count < 361 && count >= 316){
+			    	arrListDataeigpc.add(arrFace);
+			    }
+			    else if(count < 406 && count >= 361){
+			    	arrListDataninpc.add(arrFace);
+			    }
+			    else{
+			    	
+			    }
 			    arrListData.add(arrFace);
+			    count++;
 		    }
 	    }
 	    FileReader filereader = new FileReader(trainLabels);
 	    BufferedReader bufferedreader = new BufferedReader(filereader);
+	    ArrayList<Character> arrLabelstenpc = new ArrayList<Character>();
+	    ArrayList<Character> arrLabelstwenpc = new ArrayList<Character>();
+	    ArrayList<Character> arrLabelsthirdpc = new ArrayList<Character>();
+	    ArrayList<Character> arrLabelsfourpc = new ArrayList<Character>();
+	    ArrayList<Character> arrLabelsfifpc = new ArrayList<Character>();
+	    ArrayList<Character> arrLabelssixpc = new ArrayList<Character>();
+	    ArrayList<Character> arrLabelssevpc = new ArrayList<Character>();
+	    ArrayList<Character> arrLabelseigpc = new ArrayList<Character>();
+	    ArrayList<Character> arrLabelsninpc = new ArrayList<Character>();
 	    ArrayList<Character> arrLabels = new ArrayList<Character>();
 	    String number = null;
+	    int countLabels = 0;
 	    while((number =  bufferedreader.readLine()) != null){
 	    	int asciiVal = Integer.parseInt(number);
 	    	char val = (char) asciiVal;
+	    	if(countLabels < 46){
+		    	arrLabelstenpc.add(val);
+		    }
+		    else if(countLabels < 91 && countLabels >= 46){
+		    	arrLabelstwenpc.add(val);
+		    }
+		    else if(countLabels < 136 && countLabels >= 91){
+		    	arrLabelsthirdpc.add(val);
+		    }
+		    else if(countLabels < 181 && countLabels >= 136){
+		    	arrLabelsfourpc.add(val);
+		    }
+		    else if(countLabels < 226 && countLabels >= 181){
+		    	arrLabelsfifpc.add(val);
+		    }
+		    else if(countLabels < 271 && countLabels >= 226){
+		    	arrLabelssixpc.add(val);
+		    }
+		    else if(countLabels < 316 && countLabels >= 271){
+		    	arrLabelssevpc.add(val);
+		    }
+		    else if(countLabels < 361 && countLabels >= 316){
+		    	arrLabelseigpc.add(val);
+		    }
+		    else if(countLabels < 406 && countLabels >= 361){
+		    	arrLabelsninpc.add(val);
+		    }
+		    else{
+		    	
+		    }
 	    	arrLabels.add(val);
+	    	countLabels++;
 	    }
-	    System.out.println("Training: ");
+	    System.out.println("Training (10%): ");
+	    if(algo == 'n' && c == 'f'){
+	    	int result = NaiveBayes.naiveBayesFace(arrListDatatenpc,arrLabelstenpc);
+	    }
+	    else if(algo == 'n' && c == 'd'){
+	    	int result = NaiveBayes.naiveBayesDigit(arrListDatatenpc,arrLabelstenpc);
+	    }
+	    System.out.println("Training (20%): ");
+	    if(algo == 'n' && c == 'f'){
+	    	int result = NaiveBayes.naiveBayesFace(arrListDatatwenpc,arrLabelstwenpc);
+	    }
+	    else if(algo == 'n' && c == 'd'){
+	    	int result = NaiveBayes.naiveBayesDigit(arrListDatatwenpc,arrLabelstwenpc);
+	    }
+	    System.out.println("Training (30%): ");
+	    if(algo == 'n' && c == 'f'){
+	    	int result = NaiveBayes.naiveBayesFace(arrListDatathirdpc,arrLabelsthirdpc);
+	    }
+	    else if(algo == 'n' && c == 'd'){
+	    	int result = NaiveBayes.naiveBayesDigit(arrListDatathirdpc,arrLabelsthirdpc);
+	    }
+	    System.out.println("Training (40%): ");
+	    if(algo == 'n' && c == 'f'){
+	    	int result = NaiveBayes.naiveBayesFace(arrListDatafourpc,arrLabelsfourpc);
+	    }
+	    else if(algo == 'n' && c == 'd'){
+	    	int result = NaiveBayes.naiveBayesDigit(arrListDatafourpc,arrLabelsfourpc);
+	    }
+	    System.out.println("Training (50%): ");
+	    if(algo == 'n' && c == 'f'){
+	    	int result = NaiveBayes.naiveBayesFace(arrListDatafifpc,arrLabelsfifpc);
+	    }
+	    else if(algo == 'n' && c == 'd'){
+	    	int result = NaiveBayes.naiveBayesDigit(arrListDatafifpc,arrLabelsfifpc);
+	    }
+	    System.out.println("Training (60%): ");
+	    if(algo == 'n' && c == 'f'){
+	    	int result = NaiveBayes.naiveBayesFace(arrListDatasixpc,arrLabelssixpc);
+	    }
+	    else if(algo == 'n' && c == 'd'){
+	    	int result = NaiveBayes.naiveBayesDigit(arrListDatasixpc,arrLabelssixpc);
+	    }
+	    System.out.println("Training (70%): ");
+	    if(algo == 'n' && c == 'f'){
+	    	int result = NaiveBayes.naiveBayesFace(arrListDatasevpc,arrLabelssevpc);
+	    }
+	    else if(algo == 'n' && c == 'd'){
+	    	int result = NaiveBayes.naiveBayesDigit(arrListDatasevpc,arrLabelssevpc);
+	    }
+	    System.out.println("Training (80%): ");
+	    if(algo == 'n' && c == 'f'){
+	    	int result = NaiveBayes.naiveBayesFace(arrListDataeigpc,arrLabelseigpc);
+	    }
+	    else if(algo == 'n' && c == 'd'){
+	    	int result = NaiveBayes.naiveBayesDigit(arrListDataeigpc,arrLabelseigpc);
+	    }
+	    System.out.println("Training (90%): ");
+	    if(algo == 'n' && c == 'f'){
+	    	int result = NaiveBayes.naiveBayesFace(arrListDataninpc,arrLabelsninpc);
+	    }
+	    else if(algo == 'n' && c == 'd'){
+	    	int result = NaiveBayes.naiveBayesDigit(arrListDataninpc,arrLabelsninpc);
+	    }
+	    System.out.println("Training (100%): ");
 	    if(algo == 'n' && c == 'f'){
 	    	int result = NaiveBayes.naiveBayesFace(arrListData,arrLabels);
 	    }
