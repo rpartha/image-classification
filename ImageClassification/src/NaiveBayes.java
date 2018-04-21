@@ -21,19 +21,6 @@ public class NaiveBayes {
 		return 0;
 	}
 	public static int naiveBayesFace(ArrayList<char[][]> arrFace, ArrayList<Character> arrLabels){
-		/*for(char[][] a : arrFace){
-			for(int b = 0; b < 69; b++){
-				for(int c = 0; c < 70; c++){
-					System.out.print(a[b][c]);
-				}
-				System.out.println();
-			}
-		}
-		if(arrFace.size() != arrLabels.size()){
-			System.out.println("Number of Images: " + arrFace.size());
-			System.out.println("Number of Labels: " + arrLabels.size());
-			System.out.println("Something's Wrong!");
-		}*/
 		ArrayList<Structure> structArrList = new ArrayList<>();
 		ArrayList<char[][]> justFaces = new ArrayList<>();
 		ArrayList<char[][]> nonFaces = new ArrayList<>();

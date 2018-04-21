@@ -98,8 +98,6 @@ public class Driver {
 	    ArrayList<char[][]> arrListData = new ArrayList<char[][]>();
 	    FileReader fr = new FileReader(trainFile);
 	    BufferedReader br = new BufferedReader(fr);
-	    //char[][] arrDigit = new char[30][30];
-	    //char[][] arrFace = new char[70][70];
 	    String dataStr = null;
 	    if(c == 'd'){
 		    while((dataStr = br.readLine()) != null){
@@ -111,18 +109,10 @@ public class Driver {
 			    		} catch (Exception e){
 			    			
 			    		}
-			    		//System.out.print(arrDigit[i][j]);
 			    	}
-			    	//System.out.println();
 			    	dataStr = br.readLine();
 			    }
 			    arrListData.add(arrDigit);
-			    /*if(br.readLine() == null){
-			    	break;
-			    }
-			    else{
-			    	br.readLine();
-			    }*/
 		    }
 	    }
 	    if(c == 'f'){
@@ -135,18 +125,10 @@ public class Driver {
 			    		} catch (Exception e){
 			    			
 			    		}
-			    		//System.out.print(arrFace[i][j]);
 			    	}
-			    	//System.out.println();
 			    	dataStr = br.readLine();
 			    }
 			    arrListData.add(arrFace);
-			    /*if(br.readLine() == null){
-			    	break;
-			    }
-			    else {
-			    	br.readLine();
-			    }*/
 		    }
 	    }
 	    FileReader filereader = new FileReader(trainLabels);
@@ -165,7 +147,6 @@ public class Driver {
 	    else if(algo == 'n' && c == 'd'){
 	    	int result = NaiveBayes.naiveBayesDigit(arrListData,arrLabels);
 	    }
-	    System.out.println("Training: ");
 	    if(algo == 'p' && c == 'f'){
 	    	int result = Perceptron.perceptronFace(arrListData,arrLabels);
 	    }
@@ -175,8 +156,6 @@ public class Driver {
 	    ArrayList<char[][]> arrListDataValidate = new ArrayList<char[][]>();
 	    FileReader frValidate = new FileReader(validationFile);
 	    BufferedReader brValidate = new BufferedReader(frValidate);
-	    //char[][] arrDigit = new char[30][30];
-	    //char[][] arrFace = new char[70][70];
 	    String dataStrValidate = null;
 	    if(c == 'd'){
 		    while((dataStrValidate = brValidate.readLine()) != null){
@@ -188,18 +167,10 @@ public class Driver {
 			    		} catch (Exception e){
 			    			
 			    		}
-			    		//System.out.print(arrDigit[i][j]);
 			    	}
-			    	//System.out.println();
 			    	dataStrValidate = brValidate.readLine();
 			    }
 			    arrListDataValidate.add(arrDigit);
-			    /*if(br.readLine() == null){
-			    	break;
-			    }
-			    else{
-			    	br.readLine();
-			    }*/
 		    }
 	    }
 	    if(c == 'f'){
@@ -212,18 +183,10 @@ public class Driver {
 			    		} catch (Exception e){
 			    			
 			    		}
-			    		//System.out.print(arrFace[i][j]);
 			    	}
-			    	//System.out.println();
 			    	dataStrValidate = brValidate.readLine();
 			    }
 			    arrListDataValidate.add(arrFace);
-			    /*if(br.readLine() == null){
-			    	break;
-			    }
-			    else {
-			    	br.readLine();
-			    }*/
 		    }
 	    }
 	    FileReader filereaderValidate = new FileReader(validationLabels);
