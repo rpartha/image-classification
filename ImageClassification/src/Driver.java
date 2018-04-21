@@ -9,7 +9,7 @@ import java.util.zip.ZipFile;
 
 
 public class Driver {
-	public static void main(String[] args) throws IOException{
+	public static void main(String[] args) throws IOException, Exception{
 		char c;
 		char algo;
 		while(true){
@@ -433,23 +433,28 @@ public class Driver {
 				continue;
 			}
 			if(someInput == 'y'){
-				System.out.println("Please enter an index of the image you would like to test");
-				String input2 = sc.next();
-				index = Integer.parseInt(input2);
+				if(c == 'f' && algo == 'n'){
+					while(true){
+						System.out.println("Please enter an index of the image you would like to test");
+						String input2 = sc.next();
+						try{
+							index = Integer.parseInt(input2);
+						} catch(NumberFormatException e){
+							System.out.println("Index must be an integer!");
+							continue;
+						}
+						if(index > 150 || index < 1){
+							System.out.println("Index out of bounds!");
+							continue;
+						}
+						break;
+					}
+					NaiveBayes.naiveBayesFaceTestFunction(arrListDataTest, arrLabelsTest, index);
+				}
 			}
 			else {
 				break;
 			}
-			if(c == 'f' && algo == 'n'){
-				while(index > 150){
-					System.out.println("Index out of bounds!");
-					System.out.println("Please enter an index of the image you would like to test");
-					String input2 = sc.next();
-					index = Integer.parseInt(input2);
-				}
-				NaiveBayes.naiveBayesFaceTestFunction(arrListDataTest, arrLabelsTest, index);
-			}
-			break;
 		}
 	}
 }
