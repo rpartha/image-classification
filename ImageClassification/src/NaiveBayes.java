@@ -20,7 +20,7 @@ public class NaiveBayes {
 		}
 		return 0;
 	}
-	public static int naiveBayesFace(ArrayList<char[][]> arrFace, ArrayList<Character> arrLabels){
+	public static int[] naiveBayesFace(ArrayList<char[][]> arrFace, ArrayList<Character> arrLabels){
 		ArrayList<Structure> structArrList = new ArrayList<>();
 		ArrayList<char[][]> justFaces = new ArrayList<>();
 		ArrayList<char[][]> nonFaces = new ArrayList<>();
@@ -120,6 +120,14 @@ public class NaiveBayes {
 		double finalRes = (double) numCorrect/arrFace.size()*100;
 		System.out.println("Accuracy: " + finalRes + " %");
 		
-		return 0;
+		return finalVals;
+	}
+	
+	public static void naiveBayesFaceTestFunction(ArrayList<char[][]> arrFace, ArrayList<Character> arrLabels, int index){
+		int[] finalVals = naiveBayesFace(arrFace,arrLabels);
+		
+		int predictedAnswer = finalVals[index-1];
+		System.out.println("Predicted Answer: " + predictedAnswer);
+		System.out.println("Actual Answer: " + (int) arrLabels.get(index-1));
 	}
 }

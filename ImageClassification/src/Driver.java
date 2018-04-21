@@ -31,7 +31,7 @@ public class Driver {
 					System.out.println("Invalid Input.");
 				}
 				else{
-					sc.close();
+					//sc.close();
 					break;
 				}
 			}
@@ -243,73 +243,73 @@ public class Driver {
 	    }
 	    System.out.println("Training (10%): ");
 	    if(algo == 'n' && c == 'f'){
-	    	int result = NaiveBayes.naiveBayesFace(arrListDatatenpc,arrLabelstenpc);
+	    	NaiveBayes.naiveBayesFace(arrListDatatenpc,arrLabelstenpc);
 	    }
 	    else if(algo == 'n' && c == 'd'){
-	    	int result = NaiveBayes.naiveBayesDigit(arrListDatatenpc,arrLabelstenpc);
+	    	NaiveBayes.naiveBayesDigit(arrListDatatenpc,arrLabelstenpc);
 	    }
 	    System.out.println("Training (20%): ");
 	    if(algo == 'n' && c == 'f'){
-	    	int result = NaiveBayes.naiveBayesFace(arrListDatatwenpc,arrLabelstwenpc);
+	    	NaiveBayes.naiveBayesFace(arrListDatatwenpc,arrLabelstwenpc);
 	    }
 	    else if(algo == 'n' && c == 'd'){
-	    	int result = NaiveBayes.naiveBayesDigit(arrListDatatwenpc,arrLabelstwenpc);
+	    	NaiveBayes.naiveBayesDigit(arrListDatatwenpc,arrLabelstwenpc);
 	    }
 	    System.out.println("Training (30%): ");
 	    if(algo == 'n' && c == 'f'){
-	    	int result = NaiveBayes.naiveBayesFace(arrListDatathirdpc,arrLabelsthirdpc);
+	    	NaiveBayes.naiveBayesFace(arrListDatathirdpc,arrLabelsthirdpc);
 	    }
 	    else if(algo == 'n' && c == 'd'){
-	    	int result = NaiveBayes.naiveBayesDigit(arrListDatathirdpc,arrLabelsthirdpc);
+	    	NaiveBayes.naiveBayesDigit(arrListDatathirdpc,arrLabelsthirdpc);
 	    }
 	    System.out.println("Training (40%): ");
 	    if(algo == 'n' && c == 'f'){
-	    	int result = NaiveBayes.naiveBayesFace(arrListDatafourpc,arrLabelsfourpc);
+	    	NaiveBayes.naiveBayesFace(arrListDatafourpc,arrLabelsfourpc);
 	    }
 	    else if(algo == 'n' && c == 'd'){
-	    	int result = NaiveBayes.naiveBayesDigit(arrListDatafourpc,arrLabelsfourpc);
+	    	NaiveBayes.naiveBayesDigit(arrListDatafourpc,arrLabelsfourpc);
 	    }
 	    System.out.println("Training (50%): ");
 	    if(algo == 'n' && c == 'f'){
-	    	int result = NaiveBayes.naiveBayesFace(arrListDatafifpc,arrLabelsfifpc);
+	    	NaiveBayes.naiveBayesFace(arrListDatafifpc,arrLabelsfifpc);
 	    }
 	    else if(algo == 'n' && c == 'd'){
-	    	int result = NaiveBayes.naiveBayesDigit(arrListDatafifpc,arrLabelsfifpc);
+	    	NaiveBayes.naiveBayesDigit(arrListDatafifpc,arrLabelsfifpc);
 	    }
 	    System.out.println("Training (60%): ");
 	    if(algo == 'n' && c == 'f'){
-	    	int result = NaiveBayes.naiveBayesFace(arrListDatasixpc,arrLabelssixpc);
+	    	NaiveBayes.naiveBayesFace(arrListDatasixpc,arrLabelssixpc);
 	    }
 	    else if(algo == 'n' && c == 'd'){
-	    	int result = NaiveBayes.naiveBayesDigit(arrListDatasixpc,arrLabelssixpc);
+	    	NaiveBayes.naiveBayesDigit(arrListDatasixpc,arrLabelssixpc);
 	    }
 	    System.out.println("Training (70%): ");
 	    if(algo == 'n' && c == 'f'){
-	    	int result = NaiveBayes.naiveBayesFace(arrListDatasevpc,arrLabelssevpc);
+	    	NaiveBayes.naiveBayesFace(arrListDatasevpc,arrLabelssevpc);
 	    }
 	    else if(algo == 'n' && c == 'd'){
-	    	int result = NaiveBayes.naiveBayesDigit(arrListDatasevpc,arrLabelssevpc);
+	    	NaiveBayes.naiveBayesDigit(arrListDatasevpc,arrLabelssevpc);
 	    }
 	    System.out.println("Training (80%): ");
 	    if(algo == 'n' && c == 'f'){
-	    	int result = NaiveBayes.naiveBayesFace(arrListDataeigpc,arrLabelseigpc);
+	    	NaiveBayes.naiveBayesFace(arrListDataeigpc,arrLabelseigpc);
 	    }
 	    else if(algo == 'n' && c == 'd'){
-	    	int result = NaiveBayes.naiveBayesDigit(arrListDataeigpc,arrLabelseigpc);
+	    	NaiveBayes.naiveBayesDigit(arrListDataeigpc,arrLabelseigpc);
 	    }
 	    System.out.println("Training (90%): ");
 	    if(algo == 'n' && c == 'f'){
-	    	int result = NaiveBayes.naiveBayesFace(arrListDataninpc,arrLabelsninpc);
+	    	NaiveBayes.naiveBayesFace(arrListDataninpc,arrLabelsninpc);
 	    }
 	    else if(algo == 'n' && c == 'd'){
-	    	int result = NaiveBayes.naiveBayesDigit(arrListDataninpc,arrLabelsninpc);
+	    	NaiveBayes.naiveBayesDigit(arrListDataninpc,arrLabelsninpc);
 	    }
 	    System.out.println("Training (100%): ");
 	    if(algo == 'n' && c == 'f'){
-	    	int result = NaiveBayes.naiveBayesFace(arrListData,arrLabels);
+	    	NaiveBayes.naiveBayesFace(arrListData,arrLabels);
 	    }
 	    else if(algo == 'n' && c == 'd'){
-	    	int result = NaiveBayes.naiveBayesDigit(arrListData,arrLabels);
+	    	NaiveBayes.naiveBayesDigit(arrListData,arrLabels);
 	    }
 	    if(algo == 'p' && c == 'f'){
 	    	int result = Perceptron.perceptronFace(arrListData,arrLabels);
@@ -364,10 +364,10 @@ public class Driver {
 	    }
 	    System.out.println("Validating: ");
 	    if(algo == 'n' && c == 'f'){
-	    	int result = NaiveBayes.naiveBayesFace(arrListDataValidate,arrLabelsValidate);
+	    	NaiveBayes.naiveBayesFace(arrListDataValidate,arrLabelsValidate);
 	    }
 	    else if(algo == 'n' && c == 'd'){
-	    	int result = NaiveBayes.naiveBayesDigit(arrListDataValidate,arrLabelsValidate);
+	    	NaiveBayes.naiveBayesDigit(arrListDataValidate,arrLabelsValidate);
 	    }
 	    ArrayList<char[][]> arrListDataTest = new ArrayList<char[][]>();
 	    FileReader frTest = new FileReader(testFile);
@@ -416,10 +416,40 @@ public class Driver {
 	    }
 	    System.out.println("Testing: ");
 	    if(algo == 'n' && c == 'f'){
-	    	int result = NaiveBayes.naiveBayesFace(arrListDataTest,arrLabelsTest);
+	    	NaiveBayes.naiveBayesFace(arrListDataTest,arrLabelsTest);
 	    }
 	    else if(algo == 'n' && c == 'd'){
-	    	int result = NaiveBayes.naiveBayesDigit(arrListDataTest,arrLabelsTest);
+	    	NaiveBayes.naiveBayesDigit(arrListDataTest,arrLabelsTest);
 	    }
+	    while(true){
+	    	int index = 0;
+			Scanner sc = new Scanner(System.in); 
+			System.out.println("Would you like to use the test function? Enter 'y' for yes. Enter 'n' for no.");
+			String input = sc.next();
+			input = input.toLowerCase();
+			char someInput = input.charAt(0);
+			if(someInput != 'y' && someInput != 'n'){
+				System.out.println("Invalid input.");
+				continue;
+			}
+			if(someInput == 'y'){
+				System.out.println("Please enter an index of the image you would like to test");
+				String input2 = sc.next();
+				index = Integer.parseInt(input2);
+			}
+			else {
+				break;
+			}
+			if(c == 'f' && algo == 'n'){
+				while(index > 150){
+					System.out.println("Index out of bounds!");
+					System.out.println("Please enter an index of the image you would like to test");
+					String input2 = sc.next();
+					index = Integer.parseInt(input2);
+				}
+				NaiveBayes.naiveBayesFaceTestFunction(arrListDataTest, arrLabelsTest, index);
+			}
+			break;
+		}
 	}
 }
