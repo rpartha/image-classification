@@ -141,7 +141,38 @@ public class Driver {
 			    	}
 			    	dataStr = br.readLine();
 			    }
+			    if(count < 501){
+			    	arrListDatatenpc.add(arrDigit);
+			    }
+			    else if(count < 1001 && count >= 501){
+			    	arrListDatatwenpc.add(arrDigit);
+			    }
+			    else if(count < 1501 && count >= 1001){
+			    	arrListDatathirdpc.add(arrDigit);
+			    }
+			    else if(count < 2001 && count >= 1501){
+			    	arrListDatafourpc.add(arrDigit);
+			    }
+			    else if(count < 2501 && count >= 2001){
+			    	arrListDatafifpc.add(arrDigit);
+			    }
+			    else if(count < 3001 && count >= 2501){
+			    	arrListDatasixpc.add(arrDigit);
+			    }
+			    else if(count < 3501 && count >= 3001){
+			    	arrListDatasevpc.add(arrDigit);
+			    }
+			    else if(count < 4001 && count >= 3501){
+			    	arrListDataeigpc.add(arrDigit);
+			    }
+			    else if(count < 4501 && count >= 4001){
+			    	arrListDataninpc.add(arrDigit);
+			    }
+			    else{
+			    	
+			    }
 			    arrListData.add(arrDigit);
+			    count++;
 		    }
 	    }
 	    if(c == 'f'){
@@ -208,37 +239,72 @@ public class Driver {
 	    while((number =  bufferedreader.readLine()) != null){
 	    	int asciiVal = Integer.parseInt(number);
 	    	char val = (char) asciiVal;
-	    	if(countLabels < 46){
-		    	arrLabelstenpc.add(val);
-		    }
-		    else if(countLabels < 91 && countLabels >= 46){
-		    	arrLabelstwenpc.add(val);
-		    }
-		    else if(countLabels < 136 && countLabels >= 91){
-		    	arrLabelsthirdpc.add(val);
-		    }
-		    else if(countLabels < 181 && countLabels >= 136){
-		    	arrLabelsfourpc.add(val);
-		    }
-		    else if(countLabels < 226 && countLabels >= 181){
-		    	arrLabelsfifpc.add(val);
-		    }
-		    else if(countLabels < 271 && countLabels >= 226){
-		    	arrLabelssixpc.add(val);
-		    }
-		    else if(countLabels < 316 && countLabels >= 271){
-		    	arrLabelssevpc.add(val);
-		    }
-		    else if(countLabels < 361 && countLabels >= 316){
-		    	arrLabelseigpc.add(val);
-		    }
-		    else if(countLabels < 406 && countLabels >= 361){
-		    	arrLabelsninpc.add(val);
-		    }
-		    else{
-		    	
-		    }
-	    	arrLabels.add(val);
+	    	if(c == 'f'){
+		    	if(countLabels < 46){
+			    	arrLabelstenpc.add(val);
+			    }
+			    else if(countLabels < 91 && countLabels >= 46){
+			    	arrLabelstwenpc.add(val);
+			    }
+			    else if(countLabels < 136 && countLabels >= 91){
+			    	arrLabelsthirdpc.add(val);
+			    }
+			    else if(countLabels < 181 && countLabels >= 136){
+			    	arrLabelsfourpc.add(val);
+			    }
+			    else if(countLabels < 226 && countLabels >= 181){
+			    	arrLabelsfifpc.add(val);
+			    }
+			    else if(countLabels < 271 && countLabels >= 226){
+			    	arrLabelssixpc.add(val);
+			    }
+			    else if(countLabels < 316 && countLabels >= 271){
+			    	arrLabelssevpc.add(val);
+			    }
+			    else if(countLabels < 361 && countLabels >= 316){
+			    	arrLabelseigpc.add(val);
+			    }
+			    else if(countLabels < 406 && countLabels >= 361){
+			    	arrLabelsninpc.add(val);
+			    }
+			    else{
+			    	
+			    }
+		    	arrLabels.add(val);
+	    	}
+	    	else if(c == 'd'){
+	    		if(countLabels < 501){
+			    	arrLabelstenpc.add(val);
+			    }
+			    else if(countLabels < 1001 && countLabels >= 501){
+			    	arrLabelstwenpc.add(val);
+			    }
+			    else if(countLabels < 1501 && countLabels >= 1001){
+			    	arrLabelsthirdpc.add(val);
+			    }
+			    else if(countLabels < 2001 && countLabels >= 1501){
+			    	arrLabelsfourpc.add(val);
+			    }
+			    else if(countLabels < 2501 && countLabels >= 2001){
+			    	arrLabelsfifpc.add(val);
+			    }
+			    else if(countLabels < 3001 && countLabels >= 2501){
+			    	arrLabelssixpc.add(val);
+			    }
+			    else if(countLabels < 3501 && countLabels >= 3001){
+			    	arrLabelssevpc.add(val);
+			    }
+			    else if(countLabels < 4001 && countLabels >= 3501){
+			    	arrLabelseigpc.add(val);
+			    }
+			    else if(countLabels < 4501 && countLabels >= 4001){
+			    	arrLabelsninpc.add(val);
+			    }
+			    else{
+			    	
+			    }
+	    		arrLabels.add(val);
+	    	}
 	    	countLabels++;
 	    }
 	    System.out.println("Training (10%): ");
@@ -450,6 +516,24 @@ public class Driver {
 						break;
 					}
 					NaiveBayes.naiveBayesFaceTestFunction(arrListDataTest, arrLabelsTest, index);
+				}
+				if(c == 'd' && algo == 'n'){
+					while(true){
+						System.out.println("Please enter an index of the image you would like to test");
+						String input2 = sc.next();
+						try{
+							index = Integer.parseInt(input2);
+						} catch(NumberFormatException e){
+							System.out.println("Index must be an integer!");
+							continue;
+						}
+						if(index > 1000 || index < 1){
+							System.out.println("Index out of bounds!");
+							continue;
+						}
+						break;
+					}
+					NaiveBayes.naiveBayesDigitTestFunction(arrListDataTest, arrLabelsTest, index);
 				}
 			}
 			else {
