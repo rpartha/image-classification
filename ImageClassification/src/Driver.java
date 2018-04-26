@@ -10,6 +10,7 @@ import java.util.zip.ZipFile;
 
 public class Driver {
 	public static void main(String[] args) throws IOException, Exception{
+		int[] weights = new int[4831];
 		char c;
 		char algo;
 		while(true){
@@ -314,12 +315,24 @@ public class Driver {
 	    else if(algo == 'n' && c == 'd'){
 	    	NaiveBayes.naiveBayesDigit(arrListDatatenpc,arrLabelstenpc,false);
 	    }
+	    else if(algo == 'p' && c == 'f'){
+	    	weights = Perceptron.perceptronFaceTrain(arrListDatatenpc,arrLabelstenpc);
+	    }
+	    else if(algo == 'p' && c == 'd'){
+	    	weights = Perceptron.perceptronDigitTrain(arrListDatatenpc,arrLabelstenpc);
+	    }
 	    System.out.println("Training (20%): ");
 	    if(algo == 'n' && c == 'f'){
 	    	NaiveBayes.naiveBayesFace(arrListDatatwenpc,arrLabelstwenpc,false);
 	    }
 	    else if(algo == 'n' && c == 'd'){
 	    	NaiveBayes.naiveBayesDigit(arrListDatatwenpc,arrLabelstwenpc,false);
+	    }
+	    else if(algo == 'p' && c == 'f'){
+	    	weights = Perceptron.perceptronFaceTrain(arrListDatatwenpc,arrLabelstwenpc);
+	    }
+	    else if(algo == 'p' && c == 'd'){
+	    	weights = Perceptron.perceptronDigitTrain(arrListDatatwenpc,arrLabelstwenpc);
 	    }
 	    System.out.println("Training (30%): ");
 	    if(algo == 'n' && c == 'f'){
@@ -328,12 +341,24 @@ public class Driver {
 	    else if(algo == 'n' && c == 'd'){
 	    	NaiveBayes.naiveBayesDigit(arrListDatathirdpc,arrLabelsthirdpc,false);
 	    }
+	    else if(algo == 'p' && c == 'f'){
+	    	weights = Perceptron.perceptronFaceTrain(arrListDatathirdpc,arrLabelsthirdpc);
+	    }
+	    else if(algo == 'p' && c == 'd'){
+	    	weights = Perceptron.perceptronDigitTrain(arrListDatathirdpc,arrLabelsthirdpc);
+	    }
 	    System.out.println("Training (40%): ");
 	    if(algo == 'n' && c == 'f'){
 	    	NaiveBayes.naiveBayesFace(arrListDatafourpc,arrLabelsfourpc,false);
 	    }
 	    else if(algo == 'n' && c == 'd'){
 	    	NaiveBayes.naiveBayesDigit(arrListDatafourpc,arrLabelsfourpc,false);
+	    }
+	    else if(algo == 'p' && c == 'f'){
+	    	weights = Perceptron.perceptronFaceTrain(arrListDatafourpc,arrLabelsfourpc);
+	    }
+	    else if(algo == 'p' && c == 'd'){
+	    	weights = Perceptron.perceptronDigitTrain(arrListDatafourpc,arrLabelsfourpc);
 	    }
 	    System.out.println("Training (50%): ");
 	    if(algo == 'n' && c == 'f'){
@@ -342,12 +367,24 @@ public class Driver {
 	    else if(algo == 'n' && c == 'd'){
 	    	NaiveBayes.naiveBayesDigit(arrListDatafifpc,arrLabelsfifpc,false);
 	    }
+	    else if(algo == 'p' && c == 'f'){
+	    	weights = Perceptron.perceptronFaceTrain(arrListDatafifpc,arrLabelsfifpc);
+	    }
+	    else if(algo == 'p' && c == 'd'){
+	    	weights = Perceptron.perceptronDigitTrain(arrListDatafifpc,arrLabelsfifpc);
+	    }
 	    System.out.println("Training (60%): ");
 	    if(algo == 'n' && c == 'f'){
 	    	NaiveBayes.naiveBayesFace(arrListDatasixpc,arrLabelssixpc,false);
 	    }
 	    else if(algo == 'n' && c == 'd'){
 	    	NaiveBayes.naiveBayesDigit(arrListDatasixpc,arrLabelssixpc,false);
+	    }
+	    else if(algo == 'p' && c == 'f'){
+	    	weights = Perceptron.perceptronFaceTrain(arrListDatasixpc,arrLabelssixpc);
+	    }
+	    else if(algo == 'p' && c == 'd'){
+	    	weights = Perceptron.perceptronDigitTrain(arrListDatasixpc,arrLabelssixpc);
 	    }
 	    System.out.println("Training (70%): ");
 	    if(algo == 'n' && c == 'f'){
@@ -356,6 +393,12 @@ public class Driver {
 	    else if(algo == 'n' && c == 'd'){
 	    	NaiveBayes.naiveBayesDigit(arrListDatasevpc,arrLabelssevpc,false);
 	    }
+	    else if(algo == 'p' && c == 'f'){
+	    	weights = Perceptron.perceptronFaceTrain(arrListDatasevpc,arrLabelssevpc);
+	    }
+	    else if(algo == 'p' && c == 'd'){
+	    	weights = Perceptron.perceptronDigitTrain(arrListDatasevpc,arrLabelssevpc);
+	    }
 	    System.out.println("Training (80%): ");
 	    if(algo == 'n' && c == 'f'){
 	    	NaiveBayes.naiveBayesFace(arrListDataeigpc,arrLabelseigpc,false);
@@ -363,12 +406,24 @@ public class Driver {
 	    else if(algo == 'n' && c == 'd'){
 	    	NaiveBayes.naiveBayesDigit(arrListDataeigpc,arrLabelseigpc,false);
 	    }
+	    else if(algo == 'p' && c == 'f'){
+	    	weights = Perceptron.perceptronFaceTrain(arrListDataeigpc,arrLabelseigpc);
+	    }
+	    else if(algo == 'p' && c == 'd'){
+	    	weights = Perceptron.perceptronDigitTrain(arrListDataeigpc,arrLabelseigpc);
+	    }
 	    System.out.println("Training (90%): ");
 	    if(algo == 'n' && c == 'f'){
 	    	NaiveBayes.naiveBayesFace(arrListDataninpc,arrLabelsninpc,false);
 	    }
 	    else if(algo == 'n' && c == 'd'){
 	    	NaiveBayes.naiveBayesDigit(arrListDataninpc,arrLabelsninpc,false);
+	    }
+	    else if(algo == 'p' && c == 'f'){
+	    	weights = Perceptron.perceptronFaceTrain(arrListDataninpc,arrLabelsninpc);
+	    }
+	    else if(algo == 'p' && c == 'd'){
+	    	weights = Perceptron.perceptronDigitTrain(arrListDataninpc,arrLabelsninpc);
 	    }
 	    System.out.println("Training (100%): ");
 	    if(algo == 'n' && c == 'f'){
@@ -378,10 +433,10 @@ public class Driver {
 	    	NaiveBayes.naiveBayesDigit(arrListData,arrLabels,false);
 	    }
 	    if(algo == 'p' && c == 'f'){
-	    	int result = Perceptron.perceptronFace(arrListData,arrLabels);
+	    	weights = Perceptron.perceptronFaceTrain(arrListData,arrLabels);
 	    }
 	    else if(algo == 'p' && c == 'd'){
-	    	int result = Perceptron.perceptronDigit(arrListData,arrLabels);
+	    	weights = Perceptron.perceptronDigitTrain(arrListData,arrLabels);
 	    }
 	    ArrayList<char[][]> arrListDataValidate = new ArrayList<char[][]>();
 	    FileReader frValidate = new FileReader(validationFile);
@@ -435,6 +490,12 @@ public class Driver {
 	    else if(algo == 'n' && c == 'd'){
 	    	NaiveBayes.naiveBayesDigit(arrListDataValidate,arrLabelsValidate,false);
 	    }
+	    else if(algo == 'p' && c == 'f'){
+	    	weights = Perceptron.perceptronFaceValidate(arrListDataValidate,arrLabelsValidate,weights);
+	    }
+	    else if(algo == 'p' && c == 'd'){
+	    	weights = Perceptron.perceptronDigitValidate(arrListDataValidate,arrLabelsValidate,weights);
+	    }
 	    ArrayList<char[][]> arrListDataTest = new ArrayList<char[][]>();
 	    FileReader frTest = new FileReader(testFile);
 	    BufferedReader brTest = new BufferedReader(frTest);
@@ -487,6 +548,12 @@ public class Driver {
 	    else if(algo == 'n' && c == 'd'){
 	    	NaiveBayes.naiveBayesDigit(arrListDataTest,arrLabelsTest,false);
 	    }
+	    else if(algo == 'p' && c == 'f'){
+	    	Perceptron.perceptronFaceTest(arrListDataTest,arrLabelsTest,weights,false);
+	    }
+	    else if(algo == 'p' && c == 'd'){
+	    	Perceptron.perceptronDigitTest(arrListDataTest,arrLabelsTest,weights);
+	    }
 	    while(true){
 	    	int index = 0;
 			Scanner sc = new Scanner(System.in); 
@@ -534,6 +601,24 @@ public class Driver {
 						break;
 					}
 					NaiveBayes.naiveBayesDigitTestFunction(arrListDataTest, arrLabelsTest, index);
+				}
+				if(c == 'f' && algo == 'p'){
+					while(true){
+						System.out.println("Please enter an index of the image you would like to test");
+						String input2 = sc.next();
+						try{
+							index = Integer.parseInt(input2);
+						} catch(NumberFormatException e){
+							System.out.println("Index must be an integer!");
+							continue;
+						}
+						if(index > 150 || index < 1){
+							System.out.println("Index out of bounds!");
+							continue;
+						}
+						break;
+					}
+					Perceptron.perceptronFaceTestFunction(arrListDataTest, arrLabelsTest, index, weights);
 				}
 			}
 			else {
