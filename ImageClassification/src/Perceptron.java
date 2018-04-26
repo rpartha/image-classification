@@ -4,11 +4,173 @@ public class Perceptron {
 	
 	
 	
-	public static int[] perceptronDigitTrain(ArrayList<char[][]> arrDigit, ArrayList<Character> arrLabels){
+	public static ArrayList<int[]> perceptronDigitTrain(ArrayList<char[][]> arrDigit, ArrayList<Character> arrLabels){
 		ArrayList<int[]> allWeights = new ArrayList<>();
+		int[] weight0 = new int[811];
+		allWeights.add(weight0);
+		int[] weight1 = new int[811];
+		allWeights.add(weight1);
+		int[] weight2 = new int[811];
+		allWeights.add(weight2);
+		int[] weight3 = new int[811];
+		allWeights.add(weight3);
+		int[] weight4 = new int[811];
+		allWeights.add(weight4);
+		int[] weight5 = new int[811];
+		allWeights.add(weight5);
+		int[] weight6 = new int[811];
+		allWeights.add(weight6);
+		int[] weight7 = new int[811];
+		allWeights.add(weight7);
+		int[] weight8 = new int[811];
+		allWeights.add(weight8);
+		int[] weight9 = new int[811];
+		allWeights.add(weight9);
+		int[] phi = new int[810];
+		int function0 = 0;
+		int function1 = 0;
+		int function2 = 0;
+		int function3 = 0;
+		int function4 = 0;
+		int function5 = 0;
+		int function6 = 0;
+		int function7 = 0;
+		int function8 = 0;
+		int function9 = 0;
+		int max = -1;
+		int maxVal = -1;
+		
+		boolean madeAMistake = false;  //starts
+		while(true){
+			for(int i = 0; i < arrDigit.size(); i++){
+				max = -1;
+				maxVal = -1;
+				for(int q = 0; q < 810; q++){
+					phi[q] = 0;
+				}
+				madeAMistake = false;
+				function0 = 0;
+				function1 = 0;
+				function2 = 0;
+				function3 = 0;
+				function4 = 0;
+				function5 = 0;
+				function6 = 0;
+				function7 = 0;
+				function8 = 0;
+				function9 = 0;
+				int count = 0;
+				for(int h = 0; h < 27; h++){
+					for(int k = 0; k < 30; k++){
+						if(arrDigit.get(i)[h][k] == '#' || arrDigit.get(i)[h][k] == '+'){
+							phi[count] = 1;
+						}
+						else{
+							phi[count] = 0;
+						}
+						count++;
+					}
+				}
+				function0 = allWeights.get(0)[0];
+				function1 = allWeights.get(1)[0];
+				function2 = allWeights.get(2)[0];
+				function3 = allWeights.get(3)[0];
+				function4 = allWeights.get(4)[0];
+				function5 = allWeights.get(5)[0];
+				function6 = allWeights.get(6)[0];
+				function7 = allWeights.get(7)[0];
+				function8 = allWeights.get(8)[0];
+				function9 = allWeights.get(9)[0];
+				for(int a = 1; a < 811; a++){
+					function0 += allWeights.get(0)[a]*phi[a-1];
+				}
+				if(function0 > max){
+					max = function0;
+					maxVal = 0;
+				}
+				for(int a = 1; a < 811; a++){
+					function1 += allWeights.get(1)[a]*phi[a-1];
+				}
+				if(function1 > max){
+					max = function1;
+					maxVal = 1;
+				}
+				for(int a = 1; a < 811; a++){
+					function2 += allWeights.get(2)[a]*phi[a-1];
+				}
+				if(function2 > max){
+					max = function2;
+					maxVal = 2;
+				}
+				for(int a = 1; a < 811; a++){
+					function3 += allWeights.get(3)[a]*phi[a-1];
+				}
+				if(function3 > max){
+					max = function3;
+					maxVal = 3;
+				}
+				for(int a = 1; a < 811; a++){
+					function4 += allWeights.get(4)[a]*phi[a-1];
+				}
+				if(function4 > max){
+					max = function4;
+					maxVal = 4;
+				}
+				for(int a = 1; a < 811; a++){
+					function5 += allWeights.get(5)[a]*phi[a-1];
+				}
+				if(function5 > max){
+					max = function5;
+					maxVal = 5;
+				}
+				for(int a = 1; a < 811; a++){
+					function6 += allWeights.get(6)[a]*phi[a-1];
+				}
+				if(function6 > max){
+					max = function6;
+					maxVal = 6;
+				}
+				for(int a = 1; a < 811; a++){
+					function7 += allWeights.get(7)[a]*phi[a-1];
+				}
+				if(function7 > max){
+					max = function7;
+					maxVal = 7;
+				}
+				for(int a = 1; a < 811; a++){
+					function8 += allWeights.get(8)[a]*phi[a-1];
+				}
+				if(function8 > max){
+					max = function8;
+					maxVal = 8;
+				}
+				for(int a = 1; a < 811; a++){
+					function9 += allWeights.get(9)[a]*phi[a-1];
+				}
+				if(function9 > max){
+					max = function9;
+					maxVal = 9;
+				}
+				if(arrLabels.get(i) == maxVal){
+					
+				}
+				else{
+					madeAMistake = true;
+					allWeights.get(maxVal)[0] -= 1;
+					allWeights.get(arrLabels.get(i))[0] += 1;
+					for(int a = 1; a < 811; a++){
+						allWeights.get(maxVal)[a] -= phi[a-1];
+						allWeights.get(arrLabels.get(i))[a] += phi[a-1];
+					}
+				}
+			}
+			if(!madeAMistake){
+				break;
+			}
+		}
 		
 		
-		return null;
+		return allWeights;
 		
 	}
 	
@@ -123,15 +285,287 @@ public class Perceptron {
 		
 		return weight;
 	}
-	public static int[] perceptronDigitValidate(ArrayList<char[][]> arrDigit, ArrayList<Character> arrLabels,int[] weight){
+	public static ArrayList<int[]> perceptronDigitValidate(ArrayList<char[][]> arrDigit, ArrayList<Character> arrLabels,ArrayList<int[]> allWeights){
+		int[] phi = new int[810];
+		int function0 = 0;
+		int function1 = 0;
+		int function2 = 0;
+		int function3 = 0;
+		int function4 = 0;
+		int function5 = 0;
+		int function6 = 0;
+		int function7 = 0;
+		int function8 = 0;
+		int function9 = 0;
+		int max = -1;
+		int maxVal = -1;
+		
+		boolean madeAMistake = false;  //starts
+		while(true){
+			for(int i = 0; i < arrDigit.size(); i++){
+				max = -1;
+				maxVal = -1;
+				for(int q = 0; q < 810; q++){
+					phi[q] = 0;
+				}
+				madeAMistake = false;
+				function0 = 0;
+				function1 = 0;
+				function2 = 0;
+				function3 = 0;
+				function4 = 0;
+				function5 = 0;
+				function6 = 0;
+				function7 = 0;
+				function8 = 0;
+				function9 = 0;
+				int count = 0;
+				for(int h = 0; h < 27; h++){
+					for(int k = 0; k < 30; k++){
+						if(arrDigit.get(i)[h][k] == '#' || arrDigit.get(i)[h][k] == '+'){
+							phi[count] = 1;
+						}
+						else{
+							phi[count] = 0;
+						}
+						count++;
+					}
+				}
+				function0 = allWeights.get(0)[0];
+				function1 = allWeights.get(1)[0];
+				function2 = allWeights.get(2)[0];
+				function3 = allWeights.get(3)[0];
+				function4 = allWeights.get(4)[0];
+				function5 = allWeights.get(5)[0];
+				function6 = allWeights.get(6)[0];
+				function7 = allWeights.get(7)[0];
+				function8 = allWeights.get(8)[0];
+				function9 = allWeights.get(9)[0];
+				for(int a = 1; a < 811; a++){
+					function0 += allWeights.get(0)[a]*phi[a-1];
+				}
+				if(function0 > max){
+					max = function0;
+					maxVal = 0;
+				}
+				for(int a = 1; a < 811; a++){
+					function1 += allWeights.get(1)[a]*phi[a-1];
+				}
+				if(function1 > max){
+					max = function1;
+					maxVal = 1;
+				}
+				for(int a = 1; a < 811; a++){
+					function2 += allWeights.get(2)[a]*phi[a-1];
+				}
+				if(function2 > max){
+					max = function2;
+					maxVal = 2;
+				}
+				for(int a = 1; a < 811; a++){
+					function3 += allWeights.get(3)[a]*phi[a-1];
+				}
+				if(function3 > max){
+					max = function3;
+					maxVal = 3;
+				}
+				for(int a = 1; a < 811; a++){
+					function4 += allWeights.get(4)[a]*phi[a-1];
+				}
+				if(function4 > max){
+					max = function4;
+					maxVal = 4;
+				}
+				for(int a = 1; a < 811; a++){
+					function5 += allWeights.get(5)[a]*phi[a-1];
+				}
+				if(function5 > max){
+					max = function5;
+					maxVal = 5;
+				}
+				for(int a = 1; a < 811; a++){
+					function6 += allWeights.get(6)[a]*phi[a-1];
+				}
+				if(function6 > max){
+					max = function6;
+					maxVal = 6;
+				}
+				for(int a = 1; a < 811; a++){
+					function7 += allWeights.get(7)[a]*phi[a-1];
+				}
+				if(function7 > max){
+					max = function7;
+					maxVal = 7;
+				}
+				for(int a = 1; a < 811; a++){
+					function8 += allWeights.get(8)[a]*phi[a-1];
+				}
+				if(function8 > max){
+					max = function8;
+					maxVal = 8;
+				}
+				for(int a = 1; a < 811; a++){
+					function9 += allWeights.get(9)[a]*phi[a-1];
+				}
+				if(function9 > max){
+					max = function9;
+					maxVal = 9;
+				}
+				if(arrLabels.get(i) == maxVal){
+					
+				}
+				else{
+					madeAMistake = true;
+					allWeights.get(maxVal)[0] -= 1;
+					allWeights.get(arrLabels.get(i))[0] += 1;
+					for(int a = 1; a < 811; a++){
+						allWeights.get(maxVal)[a] -= phi[a-1];
+						allWeights.get(arrLabels.get(i))[a] += phi[a-1];
+					}
+				}
+			}
+			if(!madeAMistake){
+				break;
+			}
+		}
 		
 		
-		
-		return null;
-		
+		return allWeights;
 	}
-	public static int[] perceptronDigitTest(ArrayList<char[][]> arrDigit, ArrayList<Character> arrLabels,int[] weight){
-		return null;
+	public static int[] perceptronDigitTest(ArrayList<char[][]> arrDigit, ArrayList<Character> arrLabels,ArrayList<int[]> allWeights, boolean testingFunction){
+		int[] phi = new int[810];
+		int function0 = 0;
+		int function1 = 0;
+		int function2 = 0;
+		int function3 = 0;
+		int function4 = 0;
+		int function5 = 0;
+		int function6 = 0;
+		int function7 = 0;
+		int function8 = 0;
+		int function9 = 0;
+		int max = -1;
+		int maxVal = -1;
+		int numCorrect = 0;
+		int[] finalResult = new int[1000];
+		for(int i = 0; i < arrDigit.size(); i++){
+			max = -1;
+			maxVal = -1;
+			for(int q = 0; q < 810; q++){
+				phi[q] = 0;
+			}
+			function0 = 0;
+			function1 = 0;
+			function2 = 0;
+			function3 = 0;
+			function4 = 0;
+			function5 = 0;
+			function6 = 0;
+			function7 = 0;
+			function8 = 0;
+			function9 = 0;
+			int count = 0;
+			for(int h = 0; h < 27; h++){
+				for(int k = 0; k < 30; k++){
+					if(arrDigit.get(i)[h][k] == '#' || arrDigit.get(i)[h][k] == '+'){
+						phi[count] = 1;
+					}
+					else{
+						phi[count] = 0;
+					}
+					count++;
+				}
+			}
+			function0 = allWeights.get(0)[0];
+			function1 = allWeights.get(1)[0];
+			function2 = allWeights.get(2)[0];
+			function3 = allWeights.get(3)[0];
+			function4 = allWeights.get(4)[0];
+			function5 = allWeights.get(5)[0];
+			function6 = allWeights.get(6)[0];
+			function7 = allWeights.get(7)[0];
+			function8 = allWeights.get(8)[0];
+			function9 = allWeights.get(9)[0];
+			for(int a = 1; a < 811; a++){
+				function0 += allWeights.get(0)[a]*phi[a-1];
+			}
+			if(function0 > max){
+				max = function0;
+				maxVal = 0;
+			}
+			for(int a = 1; a < 811; a++){
+				function1 += allWeights.get(1)[a]*phi[a-1];
+			}
+			if(function1 > max){
+				max = function1;
+				maxVal = 1;
+			}
+			for(int a = 1; a < 811; a++){
+				function2 += allWeights.get(2)[a]*phi[a-1];
+			}
+			if(function2 > max){
+				max = function2;
+				maxVal = 2;
+			}
+			for(int a = 1; a < 811; a++){
+				function3 += allWeights.get(3)[a]*phi[a-1];
+			}
+			if(function3 > max){
+				max = function3;
+				maxVal = 3;
+			}
+			for(int a = 1; a < 811; a++){
+				function4 += allWeights.get(4)[a]*phi[a-1];
+			}
+			if(function4 > max){
+				max = function4;
+				maxVal = 4;
+			}
+			for(int a = 1; a < 811; a++){
+				function5 += allWeights.get(5)[a]*phi[a-1];
+			}
+			if(function5 > max){
+				max = function5;
+				maxVal = 5;
+			}
+			for(int a = 1; a < 811; a++){
+				function6 += allWeights.get(6)[a]*phi[a-1];
+			}
+			if(function6 > max){
+				max = function6;
+				maxVal = 6;
+			}
+			for(int a = 1; a < 811; a++){
+				function7 += allWeights.get(7)[a]*phi[a-1];
+			}
+			if(function7 > max){
+				max = function7;
+				maxVal = 7;
+			}
+			for(int a = 1; a < 811; a++){
+				function8 += allWeights.get(8)[a]*phi[a-1];
+			}
+			if(function8 > max){
+				max = function8;
+				maxVal = 8;
+			}
+			for(int a = 1; a < 811; a++){
+				function9 += allWeights.get(9)[a]*phi[a-1];
+			}
+			if(function9 > max){
+				max = function9;
+				maxVal = 9;
+			}
+			if(arrLabels.get(i) == maxVal){
+				numCorrect++;
+			}
+			finalResult[i] = maxVal;
+		}
+		double finalRes = (double) numCorrect/arrDigit.size()*100;
+		if(!testingFunction){
+			System.out.println("Accuracy: " + finalRes + " %");
+		}
+		return finalResult;
 	}
 	public static int[] perceptronFaceTest(ArrayList<char[][]> arrFace, ArrayList<Character> arrLabels,int[] weight,boolean testingFunction){
 		int[] phi = new int[4831];
@@ -177,8 +611,8 @@ public class Perceptron {
 		
 		return resultArr;
 	}
-	public static void perceptronDigitTestFunction(ArrayList<char[][]> arrDigit, ArrayList<Character> arrLabels, int index, int[] weights){
-		int[] finalVals = perceptronDigitTest(arrDigit, arrLabels, weights);
+	public static void perceptronDigitTestFunction(ArrayList<char[][]> arrDigit, ArrayList<Character> arrLabels, int index, ArrayList<int[]> allWeights){
+		int[] finalVals = perceptronDigitTest(arrDigit, arrLabels, allWeights,true);
 		
 		int predictedAnswer = finalVals[index-1];
 		System.out.println("Predicted Answer: " + predictedAnswer);
