@@ -2,6 +2,7 @@ import java.util.ArrayList;
 
 public class NaiveBayes {
 	public static int[] naiveBayesDigit(ArrayList<char[][]> arrDigit, ArrayList<Character> arrLabels, boolean testingFunction){
+		double startTime = System.currentTimeMillis();
 		ArrayList<Structure> structArrList = new ArrayList<>();
 		ArrayList<char[][]> zeros = new ArrayList<>();
 		ArrayList<char[][]> ones = new ArrayList<>();
@@ -402,7 +403,39 @@ public class NaiveBayes {
 		if(!testingFunction){
 			System.out.println("Accuracy: " + finalRes + " %");
 		}
-		
+		double endTime = System.currentTimeMillis();
+		double time = endTime - startTime;
+		time /= 1000;
+		if(arrLabels.size() == 501){
+			System.out.println("Time for training 10% of data set: " + time);
+		}
+		else if(arrLabels.size() == 1001){
+			System.out.println("Time for training 20% of data set: " + time);
+		}
+		else if(arrLabels.size() == 1501){
+			System.out.println("Time for training 30% of data set: " + time);
+		}
+		else if(arrLabels.size() == 2001){
+			System.out.println("Time for training 40% of data set: " + time);
+		}
+		else if(arrLabels.size() == 2501){
+			System.out.println("Time for training 50% of data set: " + time);
+		}
+		else if(arrLabels.size() == 3001){
+			System.out.println("Time for training 60% of data set: " + time);
+		}
+		else if(arrLabels.size() == 3501){
+			System.out.println("Time for training 70% of data set: " + time);
+		}
+		else if(arrLabels.size() == 4001){
+			System.out.println("Time for training 80% of data set: " + time);
+		}
+		else if(arrLabels.size() == 4501){
+			System.out.println("Time for training 90% of data set: " + time);
+		}
+		else if(arrLabels.size() == 5000){
+			System.out.println("Time for training 100% of data set: " + time);
+		}
 		return finalVals;
 	}
 	
@@ -416,6 +449,7 @@ public class NaiveBayes {
 	
 	
 	public static int[] naiveBayesFace(ArrayList<char[][]> arrFace, ArrayList<Character> arrLabels, boolean testingFunction){
+		double startTime = System.currentTimeMillis();
 		ArrayList<Structure> structArrList = new ArrayList<>();
 		ArrayList<char[][]> justFaces = new ArrayList<>();
 		ArrayList<char[][]> nonFaces = new ArrayList<>();
@@ -515,6 +549,39 @@ public class NaiveBayes {
 		double finalRes = (double) numCorrect/arrFace.size()*100;
 		if(!testingFunction){
 			System.out.println("Accuracy: " + finalRes + " %");
+		}
+		double endTime = System.currentTimeMillis();
+		double time = endTime - startTime;
+		time /= 1000;
+		if(arrLabels.size() == 46){
+			System.out.println("Time for training 10% of data set: " + time);
+		}
+		else if(arrLabels.size() == 91){
+			System.out.println("Time for training 20% of data set: " + time);
+		}
+		else if(arrLabels.size() == 136){
+			System.out.println("Time for training 30% of data set: " + time);
+		}
+		else if(arrLabels.size() == 181){
+			System.out.println("Time for training 40% of data set: " + time);
+		}
+		else if(arrLabels.size() == 226){
+			System.out.println("Time for training 50% of data set: " + time);
+		}
+		else if(arrLabels.size() == 271){
+			System.out.println("Time for training 60% of data set: " + time);
+		}
+		else if(arrLabels.size() == 316){
+			System.out.println("Time for training 70% of data set: " + time);
+		}
+		else if(arrLabels.size() == 361){
+			System.out.println("Time for training 80% of data set: " + time);
+		}
+		else if(arrLabels.size() == 406){
+			System.out.println("Time for training 90% of data set: " + time);
+		}
+		else if(arrLabels.size() == 451){
+			System.out.println("Time for training 100% of data set: " + time);
 		}
 		
 		return finalVals;

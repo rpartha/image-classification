@@ -5,6 +5,7 @@ public class Perceptron {
 	
 	
 	public static ArrayList<int[]> perceptronDigitTrain(ArrayList<char[][]> arrDigit, ArrayList<Character> arrLabels){
+		double startTime = System.currentTimeMillis();
 		ArrayList<int[]> allWeights = new ArrayList<>();
 		int[] weight0 = new int[811];
 		allWeights.add(weight0);
@@ -168,14 +169,45 @@ public class Perceptron {
 				break;
 			}
 		}
-		
-		
+		double endTime = System.currentTimeMillis();
+		double time = endTime - startTime;
+		time /= 1000;
+		if(arrLabels.size() == 501){
+			System.out.println("Time for training 10% of data set: " + time);
+		}
+		else if(arrLabels.size() == 1001){
+			System.out.println("Time for training 20% of data set: " + time);
+		}
+		else if(arrLabels.size() == 1501){
+			System.out.println("Time for training 30% of data set: " + time);
+		}
+		else if(arrLabels.size() == 2001){
+			System.out.println("Time for training 40% of data set: " + time);
+		}
+		else if(arrLabels.size() == 2501){
+			System.out.println("Time for training 50% of data set: " + time);
+		}
+		else if(arrLabels.size() == 3001){
+			System.out.println("Time for training 60% of data set: " + time);
+		}
+		else if(arrLabels.size() == 3501){
+			System.out.println("Time for training 70% of data set: " + time);
+		}
+		else if(arrLabels.size() == 4001){
+			System.out.println("Time for training 80% of data set: " + time);
+		}
+		else if(arrLabels.size() == 4501){
+			System.out.println("Time for training 90% of data set: " + time);
+		}
+		else if(arrLabels.size() == 5000){
+			System.out.println("Time for training 100% of data set: " + time);
+		}
 		return allWeights;
 		
 	}
 	
 	public static int[] perceptronFaceTrain(ArrayList<char[][]> arrFace, ArrayList<Character> arrLabels){
-	
+		double startTime = System.currentTimeMillis();
 		int[] weight = new int[4831];
 		int[] phi = new int[4830];
 		int function = 0;
@@ -226,7 +258,39 @@ public class Perceptron {
 				break;
 			}
 		}
-		
+		double endTime = System.currentTimeMillis();
+		double time = endTime - startTime;
+		time /= 1000;
+		if(arrLabels.size() == 46){
+			System.out.println("Time for training 10% of data set: " + time);
+		}
+		else if(arrLabels.size() == 91){
+			System.out.println("Time for training 20% of data set: " + time);
+		}
+		else if(arrLabels.size() == 136){
+			System.out.println("Time for training 30% of data set: " + time);
+		}
+		else if(arrLabels.size() == 181){
+			System.out.println("Time for training 40% of data set: " + time);
+		}
+		else if(arrLabels.size() == 226){
+			System.out.println("Time for training 50% of data set: " + time);
+		}
+		else if(arrLabels.size() == 271){
+			System.out.println("Time for training 60% of data set: " + time);
+		}
+		else if(arrLabels.size() == 316){
+			System.out.println("Time for training 70% of data set: " + time);
+		}
+		else if(arrLabels.size() == 361){
+			System.out.println("Time for training 80% of data set: " + time);
+		}
+		else if(arrLabels.size() == 406){
+			System.out.println("Time for training 90% of data set: " + time);
+		}
+		else if(arrLabels.size() == 451){
+			System.out.println("Time for training 100% of data set: " + time);
+		}
 		
 		return weight;
 		

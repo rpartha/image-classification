@@ -146,28 +146,28 @@ public class Driver {
 			    if(count < 501){
 			    	arrListDatatenpc.add(arrDigit);
 			    }
-			    else if(count < 1001 && count >= 501){
+			    if(count < 1001){
 			    	arrListDatatwenpc.add(arrDigit);
 			    }
-			    else if(count < 1501 && count >= 1001){
+			    if(count < 1501){
 			    	arrListDatathirdpc.add(arrDigit);
 			    }
-			    else if(count < 2001 && count >= 1501){
+			    if(count < 2001){
 			    	arrListDatafourpc.add(arrDigit);
 			    }
-			    else if(count < 2501 && count >= 2001){
+			    if(count < 2501){
 			    	arrListDatafifpc.add(arrDigit);
 			    }
-			    else if(count < 3001 && count >= 2501){
+			    if(count < 3001){
 			    	arrListDatasixpc.add(arrDigit);
 			    }
-			    else if(count < 3501 && count >= 3001){
+			    if(count < 3501){
 			    	arrListDatasevpc.add(arrDigit);
 			    }
-			    else if(count < 4001 && count >= 3501){
+			    if(count < 4001){
 			    	arrListDataeigpc.add(arrDigit);
 			    }
-			    else if(count < 4501 && count >= 4001){
+			    if(count < 4501){
 			    	arrListDataninpc.add(arrDigit);
 			    }
 			    else{
@@ -193,28 +193,28 @@ public class Driver {
 			    if(count < 46){
 			    	arrListDatatenpc.add(arrFace);
 			    }
-			    else if(count < 91 && count >= 46){
+			    if(count < 91){
 			    	arrListDatatwenpc.add(arrFace);
 			    }
-			    else if(count < 136 && count >= 91){
+			    if(count < 136){
 			    	arrListDatathirdpc.add(arrFace);
 			    }
-			    else if(count < 181 && count >= 136){
+			    if(count < 181){
 			    	arrListDatafourpc.add(arrFace);
 			    }
-			    else if(count < 226 && count >= 181){
+			    if(count < 226){
 			    	arrListDatafifpc.add(arrFace);
 			    }
-			    else if(count < 271 && count >= 226){
+			    if(count < 271){
 			    	arrListDatasixpc.add(arrFace);
 			    }
-			    else if(count < 316 && count >= 271){
+			    if(count < 316){
 			    	arrListDatasevpc.add(arrFace);
 			    }
-			    else if(count < 361 && count >= 316){
+			    if(count < 361){
 			    	arrListDataeigpc.add(arrFace);
 			    }
-			    else if(count < 406 && count >= 361){
+			    if(count < 406){
 			    	arrListDataninpc.add(arrFace);
 			    }
 			    else{
@@ -245,28 +245,28 @@ public class Driver {
 		    	if(countLabels < 46){
 			    	arrLabelstenpc.add(val);
 			    }
-			    else if(countLabels < 91 && countLabels >= 46){
+			    if(countLabels < 91){
 			    	arrLabelstwenpc.add(val);
 			    }
-			    else if(countLabels < 136 && countLabels >= 91){
+			    if(countLabels < 136){
 			    	arrLabelsthirdpc.add(val);
 			    }
-			    else if(countLabels < 181 && countLabels >= 136){
+			    if(countLabels < 181){
 			    	arrLabelsfourpc.add(val);
 			    }
-			    else if(countLabels < 226 && countLabels >= 181){
+			    if(countLabels < 226){
 			    	arrLabelsfifpc.add(val);
 			    }
-			    else if(countLabels < 271 && countLabels >= 226){
+			    if(countLabels < 271){
 			    	arrLabelssixpc.add(val);
 			    }
-			    else if(countLabels < 316 && countLabels >= 271){
+			    if(countLabels < 316){
 			    	arrLabelssevpc.add(val);
 			    }
-			    else if(countLabels < 361 && countLabels >= 316){
+			    if(countLabels < 361){
 			    	arrLabelseigpc.add(val);
 			    }
-			    else if(countLabels < 406 && countLabels >= 361){
+			    if(countLabels < 406){
 			    	arrLabelsninpc.add(val);
 			    }
 			    else{
@@ -278,28 +278,28 @@ public class Driver {
 	    		if(countLabels < 501){
 			    	arrLabelstenpc.add(val);
 			    }
-			    else if(countLabels < 1001 && countLabels >= 501){
+			    if(countLabels < 1001){
 			    	arrLabelstwenpc.add(val);
 			    }
-			    else if(countLabels < 1501 && countLabels >= 1001){
+			    if(countLabels < 1501){
 			    	arrLabelsthirdpc.add(val);
 			    }
-			    else if(countLabels < 2001 && countLabels >= 1501){
+			    if(countLabels < 2001){
 			    	arrLabelsfourpc.add(val);
 			    }
-			    else if(countLabels < 2501 && countLabels >= 2001){
+			    if(countLabels < 2501){
 			    	arrLabelsfifpc.add(val);
 			    }
-			    else if(countLabels < 3001 && countLabels >= 2501){
+			    if(countLabels < 3001){
 			    	arrLabelssixpc.add(val);
 			    }
-			    else if(countLabels < 3501 && countLabels >= 3001){
+			    if(countLabels < 3501){
 			    	arrLabelssevpc.add(val);
 			    }
-			    else if(countLabels < 4001 && countLabels >= 3501){
+			    if(countLabels < 4001){
 			    	arrLabelseigpc.add(val);
 			    }
-			    else if(countLabels < 4501 && countLabels >= 4001){
+			    if(countLabels < 4501){
 			    	arrLabelsninpc.add(val);
 			    }
 			    else{
