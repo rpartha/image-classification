@@ -393,7 +393,7 @@ public class Driver {
 	    }
 	    if(c == 'd'){
 	    	for(int i = 0; i < 5000; i++){
-	    		if(i < 500){
+	    		if(i < 501){
 	    			arrListDatatenpc.add(arrListData.get(i));
 			    	arrLabelstenpc.add(arrLabels.get(i));
 			    }
